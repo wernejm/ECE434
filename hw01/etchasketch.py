@@ -53,7 +53,11 @@ def main():
         elif (direction == "ss") | (direction == "ww") | (direction == "aa") | (direction == "dd"):
             print "Please enter a valid direction"                  # if ww, aa, ss, or dd is entered, throw a warning
         else:
+            originalxpoint = xpoint
+            originalypoint = ypoint
+            
             for l in range(0, len(direction)):
+                valid = 1
                 if str(direction[l]) == "s":                        # if cursor gets to edge of sketch, it cannot go any further
                     if ypoint == (ydim - 1):                        # (i.e. it will not wrap around the sketch to the other side)
                         ypoint = ydim - 1
@@ -76,10 +80,13 @@ def main():
                         xpoint +=1
                 else:
                     print "Please enter a valid direction"          # if any character other than wasd is entered, throw a warning
-                
-            coordinates[xpoint][ypoint] = 1                         # change entry in coordinates matrix based on where the pointer is
-                
-            etchasketch(xdim, ydim, coordinates)                    # draw the updated sketch
+                    valid = 0
+                    xpoint = originalxpoint
+                    ypoint = originalypoint
+            
+            if valid == 1:    
+                coordinates[xpoint][ypoint] = 1                         # change entry in coordinates matrix based on where the pointer is
+                etchasketch(xdim, ydim, coordinates)                    # draw the updated sketc
                     
                 
             
