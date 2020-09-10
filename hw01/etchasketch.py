@@ -55,9 +55,8 @@ def main():
         else:
             originalxpoint = xpoint
             originalypoint = ypoint
-            
+            valid = 1
             for l in range(0, len(direction)):
-                valid = 1
                 if str(direction[l]) == "s":                        # if cursor gets to edge of sketch, it cannot go any further
                     if ypoint == (ydim - 1):                        # (i.e. it will not wrap around the sketch to the other side)
                         ypoint = ydim - 1
@@ -87,8 +86,9 @@ def main():
             if valid == 1:    
                 coordinates[xpoint][ypoint] = 1                         # change entry in coordinates matrix based on where the pointer is
                 etchasketch(xdim, ydim, coordinates)                    # draw the updated sketc
-                    
-                
+            if valid == 0:
+                xpoint = originalxpoint
+                ypoint = originalypoint
             
         
 def newsketch(xdim, ydim, coordinates):
