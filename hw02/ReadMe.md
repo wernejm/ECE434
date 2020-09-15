@@ -19,6 +19,9 @@ The answers to the python questions are included in "hw02_Questions_python.txt".
 C:
 The answers to the C questions are included in "hw02_Questions_c.txt". The first set of measurements was made using the provided togglegpio.c file in the exercises/gpio directory, while the second set of measurements was made by removing the fd_open and fd_close statements and replacing them with an lseek() command. This program is included in this repository as "togglegpio_lseek". To execute, run ./togglegpio_lseek 100, where 100 is the sleep time in microseconds.
 
+After adding lseek, I found that there wasn't any improvement in toggling speed, and it actually increased CPU usage. I think it's worth noting that this was the last measurement I made in the session, and my Bone started to run a little slower/more inconsistently, so it might be a hardware/heating issue rather than a software issue.
+
+
 
 gpiod:
 
@@ -37,6 +40,15 @@ To control the game, use the leftmost pushbutton to move left, left middle pushb
 
 
 Modifications:
-togglegpio.c
+1) togglegpio.c:
+Modified the file. It's included as togglegpio_modified.c. If you want to run 10000 us on and 50000 us off on pin line 60, run ./togglegpio_modified 60 10000 50000.
+The highest frequency on the scope is 3.320 kHz.
 
-gpio-int-test.c
+
+2) gpio-int-test.c
+Modified the file. It's included as gpio-int-test_modified.c. If you want to run the code on gpio 60, run ./gpio-int-test_modified 60.
+
+Next, I created gpioThru.c and made it so that the user can enter an input signal pin and an output signal pin. If you want to copy the value of port 7 to port 60, run ./gpioThru 7 60.
+The output does track the input. The highest frequency the output will consistently track is about 200 Hz, otherwise the pulse widths start to vary wildly. However, the frequency has gone as high as 600 Hz, but it's incredibly inconsistent. At 200 Hz, the processor is at 78% usage; any higher, the processor quickly hits 100% usage.
+
+The delays are somewhat inconsistent, for me. I found the delay for a rising edge hovers right around 900 us, whereas the falling edge delay is closer to 1.5 ms. I measured several different edges at 100 Hz, and that was the trend I saw in the scope readings.
