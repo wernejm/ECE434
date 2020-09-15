@@ -23,6 +23,13 @@ The answers to the C questions are included in "hw02_Questions_c.txt". The first
 gpiod:
 
 
+security:
+1) I set it so that I now ssh into the bone using port 1022 (had to change setDNS.sh, firstssh.sh, and the sshd config file given in the instructions).
+2) 
+
+
+
+
 Etch-a-sketch:
 I made it so that the dimensions and the game are now both controlled using the pushbuttons.
 To enter the dimensions, use the leftmost pushbutton to decrease dimension and the middle left pushbutton to increase dimension. Use rightmost pushbutton to confirm dimension.
