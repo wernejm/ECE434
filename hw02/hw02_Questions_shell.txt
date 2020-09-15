@@ -1,0 +1,18 @@
+James Werne
+ECE434
+HW02 Questions
+
+Measuring a gpio pin on an Oscilloscope
+Shell Script Q/A:
+
+1. The min voltage is -60.0 mV and the max voltage is 3.26 V
+2. The period is 244.4 ms
+3. Not very close; my measured period is over twice as long as the ideal 100 ms period.
+4. One reason they differ is because the togglegpio.sh code has it so that the sleep argument (in this case, 0.1) will be the amount the LED goes high, then goes low. As a result, it actually takes 200ms to complete a full toggle cycle in the code. The remaining 40ms discrepancy is due to code execution time.
+5. togglegpio.sh is using about 19.6% of the CPU.
+6. Table included. The shortest period I can measure is just about 43 ms.
+7. The period appears to be fairly stable; save every 20th pulse, the square waves are of equal period/width.
+8. I caught a snapshot of the signal just as I launched vi. I set the sleep time to be 100 us, and instead of getting the expected 43 ms, I got 105 ms, indicating the period was not stable in that instant (in addition to the pulses having visibly varying width).
+9. After removing several unnecessary echo statements, I launched it using a sleep of 1 ms, and I still got a period of about 45 ms. Thus, it didn't have any noticable impact on the period.
+10. Yes, the period appears to be shorter; using 100 ms, I get 230.5 ms instead of 244.4 ms, which is a decent improvement. Similar improvements occurred for the other sleep times listed in the table.
+11. The shortest period I was able to get was using sh, and I got a period of 30.5 ms.

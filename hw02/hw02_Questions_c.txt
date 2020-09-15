@@ -1,0 +1,18 @@
+James Werne
+ECE434
+HW02 Questions
+
+Measuring a gpio pin on an Oscilloscope
+Shell Script Q/A:
+
+1. The min voltage is -60.0 mV and the max voltage is 3.26 V
+2. The period is 200.4 ms
+3. My period is effectively twice as much as 100ms -- the input is the sleep time (0.1 s), which is how long the LED is either on or off (i.e. period = 2*sleep).
+4. The main discrepancy is due to the reason listed in part 3 above. After that, there is a 0.4ms discrepancy, which is again due to execution of the code.
+5. togglegpio.c is using about 3.3% of the CPU.
+6. Table included. The shortest period I can measure is about 300 us.
+7. The period appears to be wiggling a little bit; from my observations, I've seen the period fluctuate (at the highest speed) between 300 us and 370 us, which is admittedly more stable than python or shell.
+8. I caught a snapshot of the signal just as I launched vi. I set the sleep time to be 1 us, and instead of getting the expected 300 us, I got 350.4 us, indicating the period was not stable in that instant (in addition to the pulses having visibly varying width).
+9. I removed print statements, but the statements were in the setup, so there is no noticeable improvement on speed.
+10. NA for python
+11. NA for python
