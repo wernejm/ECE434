@@ -1,13 +1,13 @@
 // Blink pin 60 at 1 Hz
 //
-// Created by Dingo_aus, 7 January 2009
-// email: dingo_aus [at] internode <dot> on /dot/ net
+//Created by Dingo_aus, 7 January 2009
+//email: dingo_aus [at] internode <dot> on /dot/ net
 // From http://www.avrfreaks.net/wiki/index.php/Documentation:Linux/GPIO#gpio_framework
 //
-// Created in AVR32 Studio (version 2.0.2) running on Ubuntu 8.04
+//Created in AVR32 Studio (version 2.0.2) running on Ubuntu 8.04
 // Modified by Mark A. Yoder, 21-July-2011
 // Modified by Mark A. Yoder 30-May-2013
-// Modified by James Werne, 9/16/2020
+// Modified by James Werne, 16-Sept-2020
 
 #include <string.h>
 #include <stdio.h>
@@ -25,7 +25,7 @@ int main(int argc, char** argv)
 	int onOffTime;	// Time in micro sec to keep the signal on/off
 	int gpio = 60;
 	int gpio_fd;
-	int offset = 0;
+	int offset = 0; // file descriptor offset (sets to beginning of file)
 
 	if (argc < 2) {
 		printf("Usage: %s <on/off time in us>\n\n", argv[0]);
@@ -49,21 +49,26 @@ int main(int argc, char** argv)
 	//SET DIRECTION
 	gpio_set_dir(gpio, "out");
 	printf("...direction set to output\n");
+
+	gpio_fd = gpio_fd_open(gpio, O_WRONLY); // opens file once
 			
-	//lseek (added by James Werne)
-	lseek(gpio, offset, SEEK_SET);
-
-
 	//Run an infinite loop - will require Ctrl-C to exit this program
 	while(1)
 	{
 		toggle = !toggle;
-		gpio_set_value(gpio, toggle);
-//		printf("...value set to %d...\n", toggle);
-
+		
+		lseek(gpio_fd, offset, SEEK_SET); //sets fd to beginning of file
+						  //so toggle overwrites file
+	
+		// printf("...value set to %d...\n", toggle);
+		if (toggle)
+			write(gpio_fd, "1", 2);
+		else
+			write(gpio_fd, "0", 2);
+			
 		//Pause for a while
 		usleep(onOffTime);
 	}
-	gpio_fd_close(gpio_fd);
+	gpio_fd_close(gpio_fd); // closes file once
 	return 0;
 }

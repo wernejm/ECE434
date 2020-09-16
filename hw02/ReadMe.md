@@ -24,8 +24,7 @@ The answers to the python questions are included in "hw02_Questions_python.txt".
 C: 
 The answers to the C questions are included in "hw02_Questions_c.txt". The first set of measurements was made using the provided togglegpio.c file in the exercises/gpio directory, while the second set of measurements was made by removing the fd_open and fd_close statements and replacing them with an lseek() command. This program is included in this repository as "togglegpio_lseek". To execute, run ./togglegpio_lseek 100, where 100 is the sleep time in microseconds.
 
-After adding lseek, I found that there wasn't any improvement in toggling speed, and it actually increased CPU usage. I think it's worth noting that this was the last measurement I made in the session, and my Bone started to run a little slower/more inconsistently, so it might be a hardware/heating issue rather than a software issue.
-
+After adding lseek, I noticed considerable improvement in toggling speeds, particularly when reaching the microsecond range. At this point, the shortest periods I could get were at about 300 us; however, with the modified C code, I was able to get as small as 170 us periods. Below the ms range I noticed vast speed improvements, but above the ms range the speed improvements were negligible. The most impressive improvement offered by this C code, however, lies in the decreased processor usage. Even at its fastest, the C script used 60-70% of the CPU; this modified script uses 30-40%.
 
 
 gpiod: 
@@ -74,13 +73,13 @@ Oscilloscope Measurements
 | Oscilloscope Measurements | Period1    | CPU1 Usage | Period2    | CPU2 Usage | Period3    | CPU3 Usage | Period4    | CPU4 Usage |
 | :---                      | ---        | ---        | ---        | ---        | ---        | ---        | ---        | ---        |
 | Type:                     | Shell      | Shell      | Python     | Python     | C          | C          | CModified  | CModified  |
-| 100 ms                    | 244.4 ms   | 19.60%     | 200.6 ms   | 3.30%      | 200.4 ms   | 3.30%      | 200.4 ms   | 2.60%    |
-| 50 ms                     | 143.4 ms   | 32.50%     | 100.5 ms   | 3.30%      | 100.4 ms   | 3.30%      | 100.4 ms   | 3.20%    |
-| 25 ms                     | 92.12 ms   | 48.70%     | 50.48 ms   | 3.30%      | 50.4 ms    | 3.90%      | 50.38 ms   | 3.30%    |
-| 10 ms                     | 63.00 ms   | 70.50%     | 20.48 ms   | 4.00%      | 20.34 ms   | 4.60%      | 20.35 ms   | 4.00%    |
-| 1 ms                      | 45.48 ms   | 96.10%     | 2.402 ms   | 12.90%     | 2.318 ms   | 13.50%     | 2.328 ms   | 10.50%   |
-| 100 us                    | 43.2 ms    | 99.40%     | 568.4 us   | 41.20%     | 500.8 us   | 40.70%     | 507 us     | 50.10%   |
-| 1 us                      | NA         | NA         | 370.0 us   | 77.00%     | 300.1 us   | 61.90%     | 305 us     | 74.20%   |
+| 100 ms                    | 244.4 ms   | 19.60%     | 200.6 ms   | 3.30%      | 200.4 ms   | 3.30%      | 200.2 ms   | 2.60%      |
+| 50 ms                     | 143.4 ms   | 32.50%     | 100.5 ms   | 3.30%      | 100.4 ms   | 3.30%      | 100.2 ms   | 2.60%      |
+| 25 ms                     | 92.12 ms   | 48.70%     | 50.48 ms   | 3.30%      | 50.4 ms    | 3.90%      | 50.24 ms   | 2.60%      |
+| 10 ms                     | 63.00 ms   | 70.50%     | 20.48 ms   | 4.00%      | 20.34 ms   | 4.60%      | 20.18 ms   | 3.30%      |
+| 1 ms                      | 45.48 ms   | 96.10%     | 2.402 ms   | 12.90%     | 2.318 ms   | 13.50%     | 2.182 ms   | 3.40%      |
+| 100 us                    | 43.2 ms    | 99.40%     | 568.4 us   | 41.20%     | 500.8 us   | 40.70%     | 375.8 us   | 16.30%     |
+| 1 us                      | NA         | NA         | 370.0 us   | 77.00%     | 300.1 us   | 61.90%     | 178.5 us   | 33.90%     |
 
 
 | Osciloscope Measurements | Toggle1.c        | Toggle1.py        | Toggle2.c pin 14 | Toggle2.c pin 16 | Toggle2.py pin 14 | Toggle2.py pin 16 |
