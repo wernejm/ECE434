@@ -82,3 +82,8 @@ Oscilloscope Measurements
 | 100 us                    | 43.2 ms    | 99.40%     | 568.4 us   | 41.20%     | 500.8 us   | 40.70%     | 507 us     | 50.10%   |
 | 1 us                      | NA         | NA         | 370.0 us   | 77.00%     | 300.1 us   | 61.90%     | 305 us     | 74.20%   |
 
+
+| Osciloscope Measurements | Toggle1.c        | Toggle1.py        | Toggle2.c pin 14 | Toggle2.c pin 16 | Toggle2.py pin 14 | Toggle2.py pin 16 |
+| :---                     | ---              | ---               | ---              | ---              | ---               | ---               |
+| Period:                  | 3.350 us         | 17.37 us          | 3.580 us         | 3.580 us         | 17.90 us          | 17.90 us          |
+| Frequency:               | 298.5 kHz        | 57.57 kHz         | 279.3 kHz        | 279.3 kHz        | 55.87 kHz         | 55.87 kHz         |
