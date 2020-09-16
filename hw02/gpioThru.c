@@ -30,6 +30,8 @@ From https://www.ridgerun.com/developer/wiki/index.php/Gpio-int-test.c
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+// Modified by James Werne, 9/16/20, to copy the value of one port to another.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -76,8 +78,8 @@ int main(int argc, char **argv, char **envp)
 	unsigned int gpio;
 	unsigned int gpio1;
 	int len;
-	unsigned int gpioval;
-	unsigned int gpio1val;
+	unsigned int gpioval;	// gpio value of incoming port to be written
+				// to outgoing port
 
 	if (argc < 3) {
 		printf("Usage: gpio-int <gpio-pin>\n\n");
@@ -88,8 +90,8 @@ int main(int argc, char **argv, char **envp)
 	// Set the signal callback for Ctrl-C
 	signal(SIGINT, signal_handler);
 
-	gpio = atoi(argv[1]);
-	gpio1 = atoi(argv[2]);
+	gpio = atoi(argv[1]);	// argument 1 is input gpio (i.e. switch)
+	gpio1 = atoi(argv[2]);	// argument 2 is output gpio (i.e. LED)
 
 	gpio_export(gpio);
 	gpio_set_dir(gpio, "in");
@@ -124,11 +126,11 @@ int main(int argc, char **argv, char **envp)
 			len = read(fdset[1].fd, buf, MAX_BUF);
 			printf("\npoll() GPIO %d interrupt occurred, value=%c, len=%d\n",
 				 gpio, buf[0], len);
-			gpio_get_value(gpio, &gpioval);
-			gpio_set_value(gpio1, gpioval);
+			gpio_get_value(gpio, &gpioval);	// read input value
+			gpio_set_value(gpio1, gpioval);	// write to output gpio
 			
 			if (buf[0] == '0') {
-				count = count + 1;
+				count = count + 1;	// count if interrupt is 							// on falling edge
 				printf("button has been pressed %d times\n",
 					count);
 			}
@@ -139,8 +141,6 @@ int main(int argc, char **argv, char **envp)
 			printf("\npoll() stdin read 0x%2.2X\n", (unsigned int) buf[0]);
 		}
 		
-		gpio_get_value(gpio, &gpioval);
-		gpio_set_value(gpio1, gpioval);
 
 		fflush(stdout);
 	}

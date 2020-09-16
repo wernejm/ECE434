@@ -7,6 +7,7 @@
 // Created in AVR32 Studio (version 2.0.2) running on Ubuntu 8.04
 // Modified by Mark A. Yoder, 21-July-2011
 // Modified by Mark A. Yoder 30-May-2013
+// Modified by James Werne, 9/16/2020
 
 #include <string.h>
 #include <stdio.h>

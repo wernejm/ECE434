@@ -1,4 +1,4 @@
-// Blink pin 60 at 1 Hz
+// Blink pin specified by user at on/off time specified by user
 //
 // Created by Dingo_aus, 7 January 2009
 // email: dingo_aus [at] internode <dot> on /dot/ net

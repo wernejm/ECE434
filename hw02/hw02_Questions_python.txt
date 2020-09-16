@@ -3,7 +3,7 @@ ECE434
 HW02 Questions
 
 Measuring a gpio pin on an Oscilloscope
-Shell Script Q/A:
+Python Q/A:
 
 1. The min voltage is -60.0 mV and the max voltage is 3.22 V
 2. The period is 200.6 ms

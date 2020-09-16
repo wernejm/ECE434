@@ -62,8 +62,8 @@ def main():
     
     while True:                                                     # loop 
         print("Use leftmost, left middle, right middle, or rightmost buttons to draw left, up, down, or right")
-        print("Use wa, sa, sd, or wd to draw diagonals")
-        print("Type 'clear' to erase the sketch")
+        #print("Use wa, sa, sd, or wd to draw diagonals")
+        #print("Type 'clear' to erase the sketch")
     
         switchmapping = ["a", "w", "s", "d"]
         direction = ""

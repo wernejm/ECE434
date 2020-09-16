@@ -1,2 +1,14 @@
 James Werne
 Oscilloscope Measurements
+
+| Oscilloscope Measurements | Period1    | CPU1 Usage | Period2    | CPU2 Usage | Period3    | CPU3 Usage | Period4    | CPU4 Usage |
+| :---                      | ---        | ---        | ---        | ---        | ---        | ---        | ---        | ---        |
+| Type:                     | Shell      | Shell      | Python     | Python     | C          | C          | CModified  | CModified  |
+| 100 ms                    | 244.4 ms   | 19.60%     | 200.6 ms   | 3.30%      | 200.4 ms   | 3.30%      | 200.4 ms   | 2.60%    |
+| 50 ms                     | 143.4 ms   | 32.50%     | 100.5 ms   | 3.30%      | 100.4 ms   | 3.30%      | 100.4 ms   | 3.20%    |
+| 25 ms                     | 92.12 ms   | 48.70%     | 50.48 ms   | 3.30%      | 50.4 ms    | 3.90%      | 50.38 ms   | 3.30%    |
+| 10 ms                     | 63.00 ms   | 70.50%     | 20.48 ms   | 4.00%      | 20.34 ms   | 4.60%      | 20.35 ms   | 4.00%    |
+| 1 ms                      | 45.48 ms   | 96.10%     | 2.402 ms   | 12.90%     | 2.318 ms   | 13.50%     | 2.328 ms   | 10.50%   |
+| 100 us                    | 43.2 ms    | 99.40%     | 568.4 us   | 41.20%     | 500.8 us   | 40.70%     | 507 us     | 50.10%   |
+| 1 us                      | NA         | NA         | 370.0 us   | 77.00%     | 300.1 us   | 61.90%     | 305 us     | 74.20%   |
+

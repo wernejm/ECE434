@@ -30,6 +30,9 @@ From https://www.ridgerun.com/developer/wiki/index.php/Gpio-int-test.c
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+// Modified by James Werne, 9/16/2020, to count button presses on 
+// 	incoming falling edges
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -119,6 +122,7 @@ int main(int argc, char **argv, char **envp)
 			len = read(fdset[1].fd, buf, MAX_BUF);
 			printf("\npoll() GPIO %d interrupt occurred, value=%c, len=%d\n",
 				 gpio, buf[0], len);
+			// include count when button is released
 			count = count + 1;
 			printf("button has been pressed %d times\n",
 					count);
