@@ -38,8 +38,8 @@ def printTemp(channel):                     # interrupt function:
         print("Right sensor alarm: temperature value is ", temp)
 
 
-GPIO.add_event_detect(TMPleftalert, GPIO.BOTH, callback=printTemp)      # set interrupts for left & right sensors
-GPIO.add_event_detect(TMPrightalert, GPIO.BOTH, callback=printTemp)
+GPIO.add_event_detect(TMPleftalert, GPIO.RISING, callback=printTemp)      # set interrupts for left & right sensors
+GPIO.add_event_detect(TMPrightalert, GPIO.RISING, callback=printTemp)
 
 # wait until an interrupt to occur
 try:
