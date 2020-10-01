@@ -35,4 +35,8 @@ I used Flask to interface a web browser with the LED matrix etch-a-sketch game i
 
 2.4" TFTLCD Display
 
-As of 3AM on 10/1/2020, my on.sh turns the display on, but does not ever turn it back off. As a result, I cannot use it to display images, text, or videos. I will speak to Dr. Yoder and update this repo as I figure out solutions.
+I installed several programs to view images, display text, and play videos.
+In order to rotate the screen, run the "on_rotated.sh" script contained in this repo. I've attached an example film, image, and text script to display this feature.
+To display an image of Boris, run the following command: "sudo fbi -noverbose -T 1 -a boris.png"
+To display the movie "hst_1.mpg", run the following command: "mplayer -vf-add rotate=4 -framedrop hst_1.mpg"
+To display the my signature, run "text.sh" in the command window.
