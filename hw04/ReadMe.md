@@ -7,7 +7,7 @@ The following outlines the files contained in the hw04 directory:
 
 Memory Map:
 
-The file containing the drawing is named ECE434_Memory_Map.png. Open this to view the mapping I drew for the Bone.
+The file containing the drawing is named ECE434_Memory_Map.jpg. Open this to view the mapping I drew for the Bone.
 
 
 GPIO via mmap
@@ -35,4 +35,4 @@ I used Flask to interface a web browser with the LED matrix etch-a-sketch game i
 
 2.4" TFTLCD Display
 
-
+As of 3AM on 10/1/2020, my on.sh turns the display on, but does not ever turn it back off. As a result, I cannot use it to display images, text, or videos. I will speak to Dr. Yoder and update this repo as I figure out solutions.
