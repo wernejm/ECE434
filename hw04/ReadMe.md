@@ -1,3 +1,19 @@
+# hw04 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  2 | Memory map 
+|  4 | mmap()
+|  4 | i2c via Kernel
+|  4 | Etch-a-Sketch via flask
+|  4 | LCD display
+|  1 | Extras
+| 19 | **Total**
+
+*My comments are in italics. --may*
+
+*Well done.  Good discussion.*
+
 James Werne
 ECE434 Embedded Linux
 hw04 ReadMe
@@ -20,7 +36,7 @@ is at 53.4% CPU usage when using the above sleep time (note that making the slee
 Without a sleep time, I measured the period to be 10.97 us. This is much faster than the above script with the time.sleep included. This is also considerably faster than even the gpiod python script from hw02, which peaked at 17.37us. Additionally, 
 using htop, this gives a CPU usage of 100%.
 
-
+*Nice discussion.*
 
 i2c via the Kernel Driver
 
