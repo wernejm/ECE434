@@ -27,5 +27,8 @@ Answers to RTOS questions are given below.
 
 PREEMPT_RT: 
 
+I installed the PREEMPT_RT real-time kernel and ran several cyclictests to compare the deltas of the mainline/stable kernel and the RT patch. 
 
+I used two cases; one involved running the cyclictest with a load, while the other involved running the cyclictest without a load. My "load" was running make/make clean commands back-to-back during the test (specifically in the directory ~/exercises/linux/modules). I've included three PNG plots for each case; one displaying the no RT results (cyclictest_<loadtype>_nort.png), one displaying the RT results (cyclictest_<loadtype>_rt.png), and one that overlaps the two results for comparison.
 
+As can be seen from the plots, the delta for the RT kernel is typically smaller and has a tighter distribution than the delta for the noRT kernel. This is much more apparent with the load; the RT kernel appears to have a bounded latency of about 100-120 us with a load, whereas the noRT kernel does not have a clear bounded latency. In the unloaded case, the RT kernel has a bounded latency of about 80 us, whereas the noRT kernel's bounded *appears* to be 90 us (but could very well be unbounded).
