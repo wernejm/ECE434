@@ -1,0 +1,1 @@
+cmd_/home/debian/ECE434_repo/hw05/led_differentrates/led.ko := ld -r  -EL  --build-id  -T ./scripts/module-common.lds -T ./arch/arm/kernel/module.lds -o /home/debian/ECE434_repo/hw05/led_differentrates/led.ko /home/debian/ECE434_repo/hw05/led_differentrates/led.o /home/debian/ECE434_repo/hw05/led_differentrates/led.mod.o;  true

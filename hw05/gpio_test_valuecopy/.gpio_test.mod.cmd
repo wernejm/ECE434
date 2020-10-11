@@ -1,0 +1,1 @@
+cmd_/home/debian/exploringBB/extras/kernel/gpio_test/gpio_test.mod := { echo  /home/debian/exploringBB/extras/kernel/gpio_test/gpio_test.o; echo; } > /home/debian/exploringBB/extras/kernel/gpio_test/gpio_test.mod

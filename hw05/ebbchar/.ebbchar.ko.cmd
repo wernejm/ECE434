@@ -1,0 +1,1 @@
+cmd_/home/debian/ECE434_repo/hw05/ebbchar/ebbchar.ko := ld -r  -EL  --build-id  -T ./scripts/module-common.lds -T ./arch/arm/kernel/module.lds -o /home/debian/ECE434_repo/hw05/ebbchar/ebbchar.ko /home/debian/ECE434_repo/hw05/ebbchar/ebbchar.o /home/debian/ECE434_repo/hw05/ebbchar/ebbchar.mod.o;  true
