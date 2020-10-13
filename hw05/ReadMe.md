@@ -1,3 +1,17 @@
+# hw05 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  2 | Project - *Sudoku looks like a hard one, unless you already have the solver.*
+|  2 | Makefile
+|  4 | Kernel Source
+|  2 | Cross-Compiling
+|  8 | Kernel Modules: hello, ebbchar, gpio_test, led
+|  1 | Extras
+| 19 | **Total**
+
+*My comments are in italics. --may*
+
 James Werne
 ECE434 HW05
 ReadMe
@@ -7,6 +21,7 @@ Project:
 
 I've attached the word document 'Projects 2020 (HW5).docx' in my repo. I've placed my name next to the projects I'm interested in working on, and I added a project idea involving Bluetooth footage transfer from a camera to a smartphone. Note that Neil Roy is my project partner, so we will work together.
 
+*No need to attach.  I see you've added your ideas to the original.*
 
 Make:
 
@@ -26,17 +41,19 @@ Cross-Compiling:
 I installed v5.8 of the Linux Kernel, then compiled helloWorld.c on the host computer and sent the compiled file to the Bone. The compiled file is in this repo and is named "a.out"
 
 Output on Bone:
+```
 Hello, World! Main is executing at 0x10495
 This address (0xbef1e538) is in our stack frame
 This address (0x21038) is in our bss section
 This address (0x2102c) is inour data section
+```
 
 Output on Host:
-Hello, World! Main is executing at 0x400596
+```Hello, World! Main is executing at 0x400596
 This address (0x7fffee0c88c0) is in our stack frame
 This address (0x601048) is in our bss section
 This address (0x601040) is in our data section
-
+```
 
 
 Kernel Modules: 
