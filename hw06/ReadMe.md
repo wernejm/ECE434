@@ -1,3 +1,17 @@
+# hw06 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+|  2 | Project 
+|  5 | Questions
+|  4 | PREEMPT_RT
+|  2 | Plots to 500 us
+|  5 | Plots - Heavy/Light load
+|  2 | Extras
+| 20 | **Total**
+
+*My comments are in italics. --may*
+
 James Werne
 ECE434 HW06
 ReadMe
@@ -7,6 +21,8 @@ Projects:
 
 I added another project to the project document I submitted for hw05. This can be viewed under 'Projects 2020 (HW6).docx' or under Projects.docx.
 
+*Check out ~/exercises/rtl-sdr for notes on things I've done with the Bone and
+the rtl-sdr*
 
 Watch:
 
