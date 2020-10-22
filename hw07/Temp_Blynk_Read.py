@@ -13,8 +13,8 @@ TMPleft = 0x48
 TMPright = 0x4a
 
 # Get the autherization code (See setup.sh)
-BLYNK_AUTH = os.getenv('BLYNK_AUTH')
-
+#BLYNK_AUTH = os.getenv('BLYNK_AUTH')
+BLYNK_AUTH='rYgNKhI4DNc0SlWErt4cVjsWCgmwI3nM'
 # Initialize Blynk
 blynk = blynklib.Blynk(BLYNK_AUTH)
 
