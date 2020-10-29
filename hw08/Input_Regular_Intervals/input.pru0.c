@@ -1,6 +1,8 @@
 #include <stdint.h>
 #include <pru_cfg.h>
 #include "resource_table_empty.h"
+// Modified by James Werne, 10/28/2020
+
 
 volatile register uint32_t __R30;
 volatile register uint32_t __R31;

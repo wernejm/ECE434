@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-export TARGET=pwm1.pru0
+export TARGET=pwm4.pru0
 echo TARGET=$TARGET
 
 # Configure the PRU pins based on which Beagle is running

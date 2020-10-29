@@ -32,19 +32,23 @@ From my scope capture, I measured the Std. Dev to be about 110.8 kHz.
 
 5.4 Controlling the PWM Frequency
 
-I went through the example & reported my results below. To run this code, navigate to the "PWM_Frequency" subdirectory, then run ./shared_setup.sh and run "make TARGET=pwm4.pru0.c"
+I went through the example & reported my results below. To run this code, navigate to the "PWM_Frequency" subdirectory, then run ./pwm_setup.sh and run "make TARGET=pwm4.pru0.c"
 
 Questions: What output pins are being driven? What's the highest frequency you can get with four channels? Is there jitter? Run the pwm-test.c program to change the on and off times. Does it work?
 
+In the code provided for pwm4.pru0.c, MAXCH is set to 4, which means channels 0, 1, 2, and 3 are being used as outputs (these correspond to P9_31, P9_30, P9_29, and P9_28 respectively). I set the delays to 1 on and 1 off, and I was able to get a maximum frequency of about 735 kHz. However, the distances between each pulse are not equal, so the waveform isn't exactly periodic, so there is some jitter with this signal (I have a picture of the oscilloscope on my phone).
 
+I then modified the pwm-test.c code to have the countOn be equal to 2 and countOff equal to 5 for each channel. After saving, making the file, and running pwm-test.out, the oscilloscope shows that the output signal's on/off times did indeed change as a result of the code. To see this, run "make TARGET=pwm-test" and then "sudo ./pwm-test.out".
 
 
 
 5.9 Reading an Input at Regular Intervals
 
-I went through the example & reported how fast the code could transfer the info from input to output (P9_31). To run the code, navigate to the "Input_Regular_Intervals" subdirectory, then run ./input_setup.sh, then run ./input.c to actually write values from input to the output.
+I went through the example & reported how fast the code could transfer the info from input to output (P9_31). To run the code, navigate to the "Input_Regular_Intervals" subdirectory, then run ./input_setup.sh, then run "make TARGET=input.pru0" to actually write values from input to the output.
 
-Questions: Use a function generator and an oscilloscope to see how fast the code can transfer the input to the output.
+Questions: Use a function generator and an oscilloscope to see how fast the code can transfer the input to the output. 
+
+The function generator only goes up to 12.5 MHz, and the oscilloscope reading at the output accurately reads 12.5 MHz. As a result, the input.pru0.c code toggles at a minimum speed of 12.5 MHz.
 
 
 
