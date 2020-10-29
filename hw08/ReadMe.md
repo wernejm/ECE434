@@ -55,7 +55,7 @@ Questions: Use a function generator and an oscilloscope to see how fast the code
 
 The function generator only goes up to 12.5 MHz, and the oscilloscope reading at the output accurately reads 12.5 MHz. When comparing the input function generator signal (yellow trace) to the output on P9_31 (blue), I measured a 27.60 ns delay, which is almost half of a cycle for a square wave at 12.5 MHz.
 
-![Alt text](hw08_Input_Intervals.jpg?raw=true "Title")
+![Alt text](hw08_Input_Intervals_1.jpg?raw=true "Title")
 
 
 
@@ -80,7 +80,7 @@ If I decrease the number of samples to, say, 30, I get a sawtooth with a jagged 
 
 I tested the triangle and sine waveforms as well. I was able to get a clean triangle signal using 100 samples (and the first order filter from above).
 
-![Alt text](hw08_Triangle_Filtered.jpg?raw=true "Title")
+![Alt text](hw08_Triangle_Filtered_1.jpg?raw=true "Title")
 
 For the sine waveform, I was able to get a clean sine wave using 100 samples (and the first order filter from above). I have pictures of each of the above oscilloscope waveforms on my phone.
 
