@@ -16,7 +16,7 @@ I edited the hello.pru0 code to toggle P9_31 using the same method as the exampl
 Questions: How fast can you toggle the pin? Is there jitter? Is it stable?
 
 I measured the max frequency of the toggle to be 12.5 Mhz. There doesn't appear to be any significant jitter, as each wave has a pretty uniform 50% duty cycle; however, the wave has a decent bit of ripple/overshoot, so it's not a perfect square wave. It does appear to be stable, as the waveform doesn't appear to be shifting or jumping around at all.
-![Alt text](/hw08_Blinking_LED.jpg?raw=true "Title")
+![Alt text](hw08_Blinking_LED.jpg?raw=true "Title")
 
 
 5.3 PWM Generator:
