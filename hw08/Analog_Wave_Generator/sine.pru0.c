@@ -1,11 +1,12 @@
 // Generate an analog waveform and use a filter to reconstruct it.
+// Edited by James Werne, 10/29/2020
 #include <stdint.h>
 #include <pru_cfg.h>
 #include "resource_table_empty.h"
 #include <math.h>
 
 #define MAXT	100	// Maximum number of time samples
-#define SAWTOOTH	// Pick which waveform
+#define SINE	// Pick which waveform
 
 volatile register uint32_t __R30;
 volatile register uint32_t __R31;
