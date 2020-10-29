@@ -49,11 +49,11 @@ I then modified the pwm-test.c code to have the countOn be equal to 2 and countO
 
 5.9 Reading an Input at Regular Intervals
 
-I went through the example & reported how fast the code could transfer the info from input to output (P9_31). To run the code, navigate to the "Input_Regular_Intervals" subdirectory, then run ./input_setup.sh, then run "make TARGET=input.pru0" to actually write values from input to the output.
+I went through the example & reported how fast the code could transfer the info from input (P9_25) to output (P9_31). To run the code, navigate to the "Input_Regular_Intervals" subdirectory, then run ./input_setup.sh, then run "make TARGET=input.pru0" to actually write values from input to the output.
 
 Questions: Use a function generator and an oscilloscope to see how fast the code can transfer the input to the output. 
 
-The function generator only goes up to 12.5 MHz, and the oscilloscope reading at the output accurately reads 12.5 MHz. As a result, the input.pru0.c code toggles at a minimum speed of 12.5 MHz.
+The function generator only goes up to 12.5 MHz, and the oscilloscope reading at the output accurately reads 12.5 MHz. When comparing the input function generator signal (yellow trace) to the output on P9_31 (blue), I measured a 27.60 ns delay, which is almost half of a cycle for a square wave at 12.5 MHz.
 
 ![Alt text](hw08_Input_Intervals.jpg?raw=true "Title")
 
@@ -78,7 +78,7 @@ If I decrease the number of samples to, say, 30, I get a sawtooth with a jagged 
 ![Alt text](hw08_Sawtooth_Filtered.jpg?raw=true "Title")
 
 
-I tested the triangle and sine waveforms as well. I was able to get a clean triangle signal using 100 samples (and the first order filter from above). One interesting thing I noticed is that if you use an odd/peculiar number of samples (like 105), the signal being generated doesn't play nicely. I noticed there was an odd dip toward the peak of the rising edge whenever I used 105 samples, and I thought it was worth noting.
+I tested the triangle and sine waveforms as well. I was able to get a clean triangle signal using 100 samples (and the first order filter from above).
 
 ![Alt text](hw08_Triangle_Filtered.jpg?raw=true "Title")
 
