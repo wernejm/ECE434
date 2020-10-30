@@ -1,3 +1,18 @@
+# hw08 grading
+
+| Points      | Description |
+| ----------- | ----------- |
+| 14 | PRU
+|  2 | Controlling the PWM Frequency - optional
+|  2 | Reading an Input at Regular Intervals - optional
+|  2 | Analog Wave Generator - optional
+| 20 | **Total**
+
+*My comments are in italics. --may*
+
+*Well done, nice a complete.*
+
+
 James Werne
 ECE434
 hw08 ReadMe
