@@ -2,14 +2,14 @@ James Werne
 ECE434 hw09
 ReadMe.md
 
-Project Timeline: 
+Project Timeline:\ 
 
-Our group plans to complete the following milestones by the given dates: 
+Our group plans to complete the following milestones by the given dates:\
 
-11/6/2020: Write patterns to LED strip 
-11/9/2020: Update eLinux page with project info. Post project on other sites (effectively completing hw10) 
-11/13/2020: Research how to extract intensity of certain frequencies in an mp3/wav file 
-11/16/2020: Apply research to have LEDs react to music (similar to an equalizer) 
+11/6/2020: Write patterns to LED strip\
+11/9/2020: Update eLinux page with project info. Post project on other sites (effectively completing hw10)\
+11/13/2020: Research how to extract intensity of certain frequencies in an mp3/wav file\
+11/16/2020: Apply research to have LEDs react to music (similar to an equalizer)\
 
 
 Logging in Sheets: 
